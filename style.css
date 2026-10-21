@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FAF7F0;
+}
+.Bandeau-de-marque{
+    background-color: #394B32;
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+}
+.nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo-brume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.logo-brume img{
+    width: 25px;
+}
+.logo-brume h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+.nav-link {
+    display: none;
+}
+.nav-link a{
+    text-decoration: none;
+}
+.cart a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+.cart img{
+    width: 18px;
+}
+.info-preview{
+    text-align: center;
+}
+.info-preview h2{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+.info-preview p {
+    font-size: 10px;
+    margin-bottom: 0;
+}
+.cafe-preview{
+    padding: 20px;
+}
+.header-preview{
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header-preview p{
+    font-size: 14px;
+}
+.img-preview{
+    background-color:#E8DBC7 ;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.img-preview img{
+    width: 100%;
+    max-width: 350px;
+}
+.etape{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+    font-size: 12px;
+}
+.intro {
+    padding: 20px;
+    background-color: #FAF7F0;
+}
+
+.intro-text {
+    margin-bottom: 25px;
+}
+
+.intro-label {
+    font-size: 10px;
+    margin-bottom: 10px;
+    color: #394B32;
+}
+
+.intro-text h1 {
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.intro-descr{
+    font-size: 12px;
+    color: #796A59;
+}

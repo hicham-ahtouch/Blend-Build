@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -10,56 +10,56 @@
 
 <body>
     <header>
-        <div>
+        <div class="Bandeau-de-marque">
             <p>Du grain à votre tasse. Un café qui vous ressemble.</p>
         </div>
-        <nav>
-            <div>
-                <img src="assets/Brume.png" alt="café BRUME logo">
-                <h1>BRUME</h1>
+        <nav class="nav-bar">
+            <div class="nav-top">
+                <div class="logo-brume">
+                    <img src="assets/Brume.png" alt="café BRUME logo">
+                    <h1>BRUME</h1>
+                </div>
+                <div class="cart">
+                    <a href=""> <img src="assets/Panier.png" alt="panier logo"> 0 </a>
+                </div>
             </div>
-            <ul>
+            <ul class="nav-link">
                 <li><a href="">L'atelier cafe</a></li>
                 <li><a href="">Notre savoir-faire</a></li>
                 <li><a href="">Besoin d'aide ?</a></li>
             </ul>
-            <div>
-                <a href=""> <img src="assets/Panier.png" alt="panier logo"> panier </a>
-            </div>
         </nav>
     </header>
     <main>
-        <section>
-            <div>
-                <p>LE CAFÉ, À VOTRE FAÇON</p>
-                <p>01/04</p>
-            </div>
-            <div>
+        <div class="etape">
+            <p>01 Personnaliser</p>
+            <p>02 Récapitulatif</p>
+        </div>
+        <section class="cafe-preview">
+            <div class="img-preview">
+                <div class="header-preview">
+                    <p>LE CAFÉ, À VOTRE FAÇON</p>
+                    <p>01/04</p>
+                </div>
                 <img src="assets/Café M.png" alt="Illustration vectorielle / Café M">
-            </div>
-            <div>
-                <h2>Un petit rituel. Beaucoup de vous.</h2>
-                <p>ESPRESSO · M · AVOINE · CARAMEL</p>
-                <p>Torrefie avec soin</p>
-                <p>prepare a la demande</p>
+                <div class="info-preview">
+                    <h2>Un petit rituel. Beaucoup de vous.</h2>
+                    <p>ESPRESSO · M · AVOINE · CARAMEL</p>
+                </div>
             </div>
         </section>
-        <section>
-            <div>
-                <p>01 Personnaliser</p>
-                <p>02 Recapitulatif</p>
-            </div>
-            <div>
-                <p>VOTRE COFFEE SHOP, AUTREMENT.</p>
+        <section class="intro">
+            <div class="intro-text">
+                <p class="intro-label">VOTRE COFFEE SHOP, AUTREMENT.</p>
                 <h1>votre pause, votre signature</h1>
-                <p>Quelques envies, un cafe unique.</p>
-                <p>A vous de composer la suite.</p>
+                <p class="intro-descr">Quelques envies, un cafe unique.</p>
+                <p class="intro-descr">A vous de composer la suite.</p>
             </div>
             <form>
                 <div>
                     <h2>01 La base</h2>
                     <p>Choix unique</p>
-                    <div>
+                    <div class="form-option">
                         <label for="espresso">Espresso</label>
                         <input type="radio" id="espresso" name="coffee" value="espresso">
                         <p>18,00 DH</p>
