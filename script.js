@@ -20,8 +20,16 @@ const config = {
 };
 // document.getElementById("espresso-name").textContent = config.base.espresso.name;
 // document.getElementById("espresso-price").innerHTML = config.base.espresso.price.toFixed(2) + "DH";
-function afficheroptions(cle,option){
-    document.getElementById(cle+"-name").textContent = option.name;
+// function afficheroptions(cle,option){
+    // document.getElementById(cle+"-name").textContent = option.name;
     // document.getElementById(cle+"-name").textContent = option.price.toFixed(2) + "DH";
+// }
+const options = document.getElementsByClassName('form-options')
+let i = 0;
+for (const key in config ){
+    for (const key1 in config[key]){
+        options[i].querySelector('label').innerHTML=config[key][key1].name;
+        options[i].querySelector('p').innerHTML=config[key][key1].price.toFixed(2)+ "DH";
+        i++;
+    }
 }
-afficheroptions("filtre",config.base.filtre);
