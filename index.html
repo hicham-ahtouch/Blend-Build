@@ -62,31 +62,31 @@
                     <p>Choix unique</p>
                     <div class="form-options">
                         <label id="espresso-name" for="espresso"> </label>
-                        <input type="radio" name="coffee" id="espresso">
-                        <p id="espresso-price">18,00 DH</p>
+                        <input type="radio" name="coffee" id="espresso" data-price="18">
+                        <p>18,00 DH</p>
                     </div>
                     <div class="form-options">
                         <label id="filtre-name" for="filtre">Filtre</label>
-                        <input type="radio" id="filtre" name="coffee">
-                        <p id="filtre-price">16,00 DH</p>
+                        <input type="radio" id="filtre" name="coffee" data-price="16">
+                        <p>16,00 DH</p>
                     </div>
                 </div>
                 <div class="form-top">
                     <h2>02 la taille</h2>
                     <p>choix unique</p>
                     <div class="form-options">
-                        <label id="taille" for="small">S - 150 ml</label>
-                        <input type="radio" id="small" name="taille" >
+                        <label id="taille" for="s">S - 150 ml</label>
+                        <input type="radio" id="s" name="taille" data-price="0">
                         <p>inclus</p>
                     </div>
                     <div class="form-options">
-                        <label for="medium">M - 250 ml</label>
-                        <input type="radio" id="medium" name="taille">
+                        <label for="m">M - 250 ml</label>
+                        <input type="radio" id="m" name="taille" data-price="4">
                         <p>+4,00 DH</p>
                     </div>
                     <div class="form-options">
-                        <label for="large">L - 350 ml</label>
-                        <input type="radio" id="large" name="taille" >
+                        <label for="l">L - 350 ml</label>
+                        <input type="radio" id="l" name="taille" data-price="8">
                         <p>+8,00 DH</p>
                     </div>
                 </div>
@@ -95,17 +95,17 @@
                     <p>choix unique</p>
                     <div class="form-options">
                         <label for="vache">Vache</label>
-                        <input type="radio" name="lait" id="vache" >
+                        <input type="radio" name="lait" id="vache" data-price="0">
                         <p>Inclus</p>
                     </div>
                     <div class="form-options">
                         <label for="avoine">Avoine</label>
-                        <input type="radio" name="lait" id="avoine" >
+                        <input type="radio" name="lait" id="avoine" data-price="4">
                         <p>+4,00 DH</p>
                     </div>
                     <div class="form-options">
                         <label for="amande">Amande</label>
-                        <input type="radio" name="lait" id="amande" >
+                        <input type="radio" name="lait" id="amande" data-price="5">
                         <p>+ 5,00 DH</p>
                     </div>
                 </div>
@@ -114,21 +114,23 @@
                     <p>plusieurs choix</p>
                     <div class="form-options">
                         <label for="caramel">Caramel</label>
-                        <input type="checkbox" name="extra" id="caramel" >
+                        <input type="checkbox" name="extra" id="caramel" data-price="3">
                         <p>+ 3,00 DH</p>
                     </div>
                     <div class="form-options">
                         <label for="vanille">Vanille</label>
-                        <input type="checkbox" name="extra" id="vanille" >
+                        <input type="checkbox" name="extra" id="vanille" data-price="3">
                         <p>+ 3,00 DH</p>
                     </div>
                 </div>
                 <p>Le prix évolue selon vos choix. Vous pourrez les modifier au récapitulatif.</p>
-                <div>
-                    <p>Votre creation - Cafe sur mesure</p>
-                    <p>29,00 DH</p>
+                <div class="cart-sum">
+                    <div class="total-sum">
+                        <p>Votre creation - Cafe sur mesure</p>
+                        <p id="total-price">29,00 DH</p>
+                    </div>
+                    <button type="submit">Ajouter au panier</button>
                 </div>
-                <button type="submit">Ajouter au panier</button>
             </form>
         </section>
     </main>

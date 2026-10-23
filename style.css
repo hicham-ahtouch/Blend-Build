@@ -173,3 +173,55 @@ body{
     border: 1px solid #394B32;
     background-color: #E9EDDF;
 }
+.cart-sum {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+.total-sum {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sum button {
+    width: 50%;
+    padding: 14px;
+    background-color: #394B32;
+    color: white;
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .cafe-preview {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .intro {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .form-top {
+       display: flex;
+       gap: 10px    ;
+    }
+
+    .form-options {
+        flex: 1;
+        max-width: none;
+    }
+}
