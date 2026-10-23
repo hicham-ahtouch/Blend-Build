@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="Bandeau-de-marque">
+            <p>Du grain à votre tasse. Un café qui vous ressemble.</p>
+        </div>
+        <nav class="nav-bar">
+            <div class="nav-top">
+                <div class="logo-brume">
+                    <img src="assets/Brume.png" alt="café BRUME logo">
+                    <h1>BRUME</h1>
+                </div>
+                <div class="cart">
+                    <a href=""> <img src="assets/Panier.png" alt="panier logo"> 0 </a>
+                </div>
+            </div>
+            <ul class="nav-link">
+                <li><a href="">L'atelier cafe</a></li>
+                <li><a href="">Notre savoir-faire</a></li>
+                <li><a href="">Besoin d'aide ?</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="etape">
+            <p>01 Personnaliser</p>
+            <p>02 Récapitulatif</p>
+        </div>
+        <section class="cafe-preview">
+            <div class="img-preview">
+                <div class="header-preview">
+                    <p>LE CAFÉ, À VOTRE FAÇON</p>
+                    <p>01/04</p>
+                </div>
+                <img src="assets/Café M.png" alt="Illustration vectorielle / Café M">
+                <div class="info-preview">
+                    <h2>Un petit rituel. Beaucoup de vous.</h2>
+                    <p>ESPRESSO · M · AVOINE · CARAMEL</p>
+                </div>
+            </div>
+        </section>
+        <section class="intro">
+            <div class="intro-text">
+                <p class="intro-label">VOTRE COFFEE SHOP, AUTREMENT.</p>
+                <h1>votre pause, votre signature</h1>
+                <p class="intro-descr">Quelques envies, un cafe unique.</p>
+                <p class="intro-descr">A vous de composer la suite.</p>
+            </div>
+            <form class="form-sec">
+                <div class="form-top">
+                    <h2>01 La base</h2>
+                    <p>Choix unique</p>
+                    <div class="form-options">
+                        <label id="espresso-name" for="espresso"> </label>
+                        <input type="radio" name="coffee" id="espresso" data-price="18">
+                        <p>18,00 DH</p>
+                    </div>
+                    <div class="form-options">
+                        <label id="filtre-name" for="filtre">Filtre</label>
+                        <input type="radio" id="filtre" name="coffee" data-price="16">
+                        <p>16,00 DH</p>
+                    </div>
+                </div>
+                <div class="form-top">
+                    <h2>02 la taille</h2>
+                    <p>choix unique</p>
+                    <div class="form-options">
+                        <label id="taille" for="s">S - 150 ml</label>
+                        <input type="radio" id="s" name="taille" data-price="0">
+                        <p>inclus</p>
+                    </div>
+                    <div class="form-options">
+                        <label for="m">M - 250 ml</label>
+                        <input type="radio" id="m" name="taille" data-price="4">
+                        <p>+4,00 DH</p>
+                    </div>
+                    <div class="form-options">
+                        <label for="l">L - 350 ml</label>
+                        <input type="radio" id="l" name="taille" data-price="8">
+                        <p>+8,00 DH</p>
+                    </div>
+                </div>
+                <div class="form-top">
+                    <h2>03 le lait</h2>
+                    <p>choix unique</p>
+                    <div class="form-options">
+                        <label for="vache">Vache</label>
+                        <input type="radio" name="lait" id="vache" data-price="0">
+                        <p>Inclus</p>
+                    </div>
+                    <div class="form-options">
+                        <label for="avoine">Avoine</label>
+                        <input type="radio" name="lait" id="avoine" data-price="4">
+                        <p>+4,00 DH</p>
+                    </div>
+                    <div class="form-options">
+                        <label for="amande">Amande</label>
+                        <input type="radio" name="lait" id="amande" data-price="5">
+                        <p>+ 5,00 DH</p>
+                    </div>
+                </div>
+                <div class="form-top">
+                    <h2>04 la touche en plus</h2>
+                    <p>plusieurs choix</p>
+                    <div class="form-options">
+                        <label for="caramel">Caramel</label>
+                        <input type="checkbox" name="extra" id="caramel" data-price="3">
+                        <p>+ 3,00 DH</p>
+                    </div>
+                    <div class="form-options">
+                        <label for="vanille">Vanille</label>
+                        <input type="checkbox" name="extra" id="vanille" data-price="3">
+                        <p>+ 3,00 DH</p>
+                    </div>
+                </div>
+                <p>Le prix évolue selon vos choix. Vous pourrez les modifier au récapitulatif.</p>
+                <div class="cart-sum">
+                    <div class="total-sum">
+                        <p>Votre creation - Cafe sur mesure</p>
+                        <p id="total-price">29,00 DH</p>
+                    </div>
+                    <button type="submit">Ajouter au panier</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>BRUME - le gout de votre rythme</p>
+        <p>une creation unique, la votre</p>
+    </footer>
+</body>
+
+</html>
