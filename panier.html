@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Panier</title>
+</head>
+
+<body>
+    <header>
+        <div class="Bandeau-de-marque">
+            <p>Du grain à votre tasse. Un café qui vous ressemble.</p>
+        </div>
+        <nav class="nav-bar">
+            <div class="nav-top">
+                <div class="logo-brume">
+                    <img src="assets/Brume.png" alt="café BRUME logo">
+                    <h1>BRUME</h1>
+                </div>
+                <div class="cart">
+                    <a href="#panier"> panier </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="checkout-cart">
+            <h2 class="cart-title"> Votre panier</h2>
+            <div class="cart-table">
+                <div class="cart-header">
+                    <p>produit</p>
+                    <p>prix unitaire</p>
+                    <p>quantite</p>
+                    <p>total</p>
+                </div>
+                <div class="cart-item">
+                    <img class="cart-product-image" src="/assets/Mug Isotherme Noir.jpg" alt="opt 1">
+                    <div class="cart-product-info">
+                        <p class="cart-product-name"> opt 1 </p>
+                        <p class="cart-unit-price">prix unitaire : 18,00 DH</p>
+                        <div class="cart-quantity">
+                            <button> - </button>
+                            <span> 1 </span>
+                            <button> + </button>
+                        </div>
+                        <p class="cart-total"> total : 18,00 DH</p>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img class="cart-product-image" src="/assets/cappucino.jpeg.webp" alt="opt 2">
+                    <div class="cart-product-info">
+                        <p class="cart-product-name"> opt 2 </p>
+                        <p class="cart-unit-price"> prix unitaire : 16,00 DH</p>
+                        <div class="cart-quantity">
+                            <button> - </button>
+                            <span> 2 </span>
+                            <button> + </button>
+                        </div>
+                        <p class="cart-total"> total : 32,00 DH</p>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <img class="cart-product-image" src="/assets/Latte Caramel.webp" alt="opt 3">
+                    <div class="cart-product-info">
+                        <p class="cart-product-name"> opt 3 </p>
+                        <p class="cart-unit-price"> prix unitaire : 12,00 DH</p>
+                        <div class="cart-quantity">
+                            <button> - </button>
+                            <span> 1 </span>
+                            <button> + </button>
+                        </div>
+                        <p class="cart-total"> total : 12,00 DH</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <p>
+                    <span>total HT</span>
+                    <span> 62,00 DH</span>
+                </p>
+                <p>
+                    <span> T.V.A</span>
+                    <span>0,00 DH</span>
+                </p>
+                <div class="cart-finale">
+                    <span>total TTC </span>
+                    <span> 62,00 DH</span>
+                </div>
+            </div>
+            <button class="cart-add-product">
+                +Ajouter un auntre produit
+            </button>
+        </section>
+    </main>
+</body>
+
+</html>
