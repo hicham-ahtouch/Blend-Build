@@ -57,18 +57,19 @@ const selectedConfig = {
   vanille: null
 };
 
-function calculertotal() {
-  let total = 0;
-  for (const key3 in selectedConfig) {
-    if (selectedConfig[key3] !== null) {
-      total = total + selectedConfig[key3];
-    }
-  }
-  console.log(total);
-  document.getElementById("total-price").innerHTML = total.toFixed(2) + " DH";
-}
+// function calculertotal() {
+//   let total = 0;
+//   for (const key3 in selectedConfig) {
+//     if (selectedConfig[key3] !== null) {
+//       total = total + selectedConfig[key3];
+//       total= 0;
+//     }
+//   }
+//   console.log(total);
+//   document.getElementById("total-price").innerHTML = total.toFixed(2) + " DH";
+// }
 
-calculertotal();
+// calculertotal();
 
 document.addEventListener("DOMContentLoaded", optionSubscribe)
 

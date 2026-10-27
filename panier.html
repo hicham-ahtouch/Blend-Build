@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script1.js" defer></script>
     <title>Panier</title>
 </head>
 
@@ -36,42 +37,48 @@
                     <p>total</p>
                 </div>
                 <div class="cart-item">
-                    <img class="cart-product-image" src="/assets/Mug Isotherme Noir.jpg" alt="opt 1">
+                   <div class="div-de-img">
+                        <img class="cart-product-image" src="" alt="cappucino">
+                    </div>
                     <div class="cart-product-info">
-                        <p class="cart-product-name"> <strong>Mug Isotherme Noir</strong> </p>
-                        <p class="cart-unit-price">prix unitaire : 18,00 DH</p>
+                        <p class="cart-product-name"></p>
+                        <p class="cart-unit-price"></p>
                         <div class="cart-quantity">
-                            <button> - </button>
-                            <span> 1 </span>
-                            <button> + </button>
+                            <button type="button" class="quantity-minus"> - </button>
+                            <span class="quantity-value"> 1 </span>
+                            <button type="button" class="quantity-plus"> + </button>
                         </div>
-                        <p class="cart-total"> total : 18,00 DH</p>
+                        <p class="cart-total"></p>
                     </div>
                 </div>
                 <div class="cart-item">
-                    <img class="cart-product-image" src="/assets/cappucino.jpeg.webp" alt="opt 2">
+                    <div class="div-de-img">
+                        <img class="cart-product-image" src="" alt="Latte Caramel">
+                    </div>
                     <div class="cart-product-info">
-                        <p class="cart-product-name"> <strong>cappucino</strong> </p>
-                        <p class="cart-unit-price"> prix unitaire : 16,00 DH</p>
+                        <p class="cart-product-name"></p>
+                        <p class="cart-unit-price"></p>
                         <div class="cart-quantity">
-                            <button> - </button>
-                            <span> 2 </span>
-                            <button> + </button>
+                            <button type="button" class="quantity-minus"> - </button>
+                            <span class="quantity-value"> 2 </span>
+                            <button type="button" class="quantity-plus"> + </button>
                         </div>
-                        <p class="cart-total"> total : 32,00 DH</p>
+                        <p class="cart-total"></p>
                     </div>
                 </div>
                 <div class="cart-item">
-                    <img class="cart-product-image" src="/assets/Latte Caramel.webp" alt="opt 3">
+                    <div class="div-de-img">
+                        <img class="cart-product-image" src="" alt="Mug">
+                    </div>
                     <div class="cart-product-info">
-                        <p class="cart-product-name"> <strong>Latte Caramel</strong> </p>
-                        <p class="cart-unit-price"> prix unitaire : 12,00 DH</p>
+                        <p class="cart-product-name"> </p>
+                        <p class="cart-unit-price"></p>
                         <div class="cart-quantity">
-                            <button> - </button>
-                            <span> 1 </span>
-                            <button> + </button>
+                            <button type="button" class="quantity-minus"> - </button>
+                            <span class="quantity-value"> 1 </span>
+                            <button type="button" class="quantity-plus"> + </button>
                         </div>
-                        <p class="cart-total"> total : 12,00 DH</p>
+                        <p class="cart-total"></p>
                     </div>
                 </div>
             </div>
@@ -94,7 +101,7 @@
                     +Ajouter un auntre produit
                 </button>
                 <button type="button" id="vers-paiement" class="cart-add-product">
-                    Vers le paiement
+                    Quick add
                 </button>
             </div>
         </section>
