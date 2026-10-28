@@ -390,6 +390,9 @@ body {
     color: #FFFFFF;
     font-size: 15px;
 }
+.paiement-section{
+    display: none;
+}
 
 @media screen and (min-width: 1024px) {
 
@@ -419,4 +422,5 @@ body {
         flex: 1;
         max-width: none;
     }
+
 }

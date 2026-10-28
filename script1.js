@@ -73,7 +73,15 @@ function calculeTTC(){
 }
 
 function displaytotal(){
-  document.querySelector(".prix-HT").textContent = calculeHT();
-  document.querySelector(".prix-TVA").textContent = calculTVA();
-  document.querySelector(".prix-TTC").textContent = calculeTTC();
+  document.querySelector(".prix-HT").textContent = calculeHT().toFixed(2) + " DH";
+  document.querySelector(".prix-TVA").textContent = calculTVA().toFixed(2) + " DH";
+  document.querySelector(".prix-TTC").textContent = calculeTTC().toFixed(2) + " DH";
 }
+displaytotal();
+
+const showsection = document.querySelector(".paiement-section");
+const btnpaiement = document.querySelector("#vers-paiement");
+
+btnpaiement.addEventListener("click", function(){
+  showsection.style.display = "block";
+});
