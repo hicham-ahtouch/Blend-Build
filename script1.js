@@ -18,29 +18,62 @@ let coffeeCart = [
   { id: "c3", name: "Latte Caramel", price: 4.50, quantity: 1, image: "Latte Caramel.webp" },
   { id: "c8", name: "Mug Isotherme Noir", price: 15.00, quantity: 1, image: "Mug.jpg" }
 ];
+
 const coffemenu = document.getElementsByClassName("cart-product-info");
 const coffepics = document.getElementsByClassName("div-de-img");
 let i = 0;
-for (const key in coffeeCart ) {
-      coffemenu[i].querySelector(".cart-product-name").textContent = coffeeCart[key].name;
-      coffemenu[i].querySelector(".cart-unit-price").textContent = "prix unitaire : " + coffeeCart[key].price.toFixed(2) + " DH";
-      coffemenu[i].querySelector(".cart-total").textContent = "total : " + (coffeeCart[key].price * coffeeCart[key].quantity).toFixed(2) + " DH";
-      coffepics[i].querySelector(".cart-product-image").src = "/assets/" + coffeeCart[key].image;
-      i++;
+
+for (const key in coffeeCart) {
+  coffemenu[i].querySelector(".cart-product-name").textContent = coffeeCart[key].name;
+  coffemenu[i].querySelector(".cart-unit-price").textContent = "prix unitaire : " + coffeeCart[key].price.toFixed(2) + " DH";
+  coffemenu[i].querySelector(".cart-total").textContent = "total : " + (coffeeCart[key].price * coffeeCart[key].quantity).toFixed(2) + " DH";
+  coffepics[i].querySelector(".cart-product-image").src = "/assets/" + coffeeCart[key].image;
+  coffemenu[i].querySelector(".quantity-value").textContent = coffeeCart[key].quantity;
+  i++;
 }
-const minusbtn = document.getElementsByClassName("quantity-minus");
+
+const minusbtn = document.querySelectorAll(".quantity-minus");
 const quantities = document.getElementsByClassName("quantity-value");
-const plusbtn = document.getElementsByClassName("quantity-plus");
-for (const key in coffeeCart){
-  const i = coffeeCart.indexOf(key);
-  plusbtn[i].addEventListener("click", function(){
-    key.quantity = key.quantity + 1 ;
-    quantities[i].textContent = key.quantity;
-    coffemenu[i].querySelector(".cart-total").textContent = "total : " + (key.price * key.quantity).toFixed(2) + "DH";
+const plusbtn = document.querySelectorAll(".quantity-plus");
+
+for (const key1 of coffeeCart) {
+  const x = coffeeCart.indexOf(key1);
+  console.log(key1);
+  
+  plusbtn[x].addEventListener("click", function () {
+    key1.quantity = key1.quantity + 1;
+    quantities[x].textContent = key1.quantity;
+    coffemenu[x].querySelector(".cart-total").textContent = "total : " + (key1.price * key1.quantity).toFixed(2) + "DH";
+    console.log(coffeeCart);
   });
-  minusbtn[i].addEventListener("click" , function(){
-    key[i].quantity = key[i].quantity - 1;
-    quantities[i].textContent = key.quantity;
-    coffemenu[i].querySelector(".cart-total").textContent = "total : " + (key.price * key.quantity).toFixed(2) + "DH";
-  })
+  minusbtn[x].addEventListener("click", function () {
+    if (key1.quantity > 1) {
+      key1.quantity = key1.quantity - 1;
+      quantities[x].textContent = key1.quantity;
+      coffemenu[x].querySelector(".cart-total").textContent = "total : " + (key1.price * key1.quantity).toFixed(2) + "DH";
+    }
+  });
+}
+
+function calculeHT(){
+  let totalHT = 0;
+  for (const coffe of coffeeCart ){
+    totalHT = totalHT + (coffe.price * coffe.quantity);
+  }
+  return totalHT;
+}
+
+function calculTVA(){
+    let totalTVA = calculeHT() * 0.055;
+    return totalTVA;
+}
+function calculeTTC(){
+  let totalTTC = calculeHT() + calculTVA();
+  return totalTTC;
+}
+
+function displaytotal(){
+  document.querySelector(".prix-HT").textContent = calculeHT();
+  document.querySelector(".prix-TVA").textContent = calculTVA();
+  document.querySelector(".prix-TTC").textContent = calculeTTC();
 }
