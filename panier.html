@@ -20,21 +20,28 @@
                     <img src="assets/Brume.png" alt="café BRUME logo">
                     <h1>BRUME</h1>
                 </div>
-                <!-- <div class="cart">
-                    <a href="#panier"> panier </a>
-                </div> -->
+                <div class="cart">
+                    <button type="button" id="modifier" class="cart-add-product hid">
+                    modifier
+                </button>
+                </div>
             </div>
         </nav>
     </header>
     <main>
-        <section class="checkout-cart">
+        <section class="checkout-cart"> 
             <h2 class="cart-title"> Votre panier</h2>
             <div class="cart-table">
-                <div class="cart-header">
-                    <p>produit</p>
-                    <p>prix unitaire</p>
-                    <p>quantite</p>
-                    <p>total</p>
+                <div class="cart-header ">
+                    <label >
+                    <input type="search" name="search" id="searchInpt">
+                    </label>
+                    <div class="quick-menu">
+                        <span></span>
+                    </div>
+                    <button type="button" class="cart-add-product" id="terminer">
+                        terminer.
+                    </button>
                 </div>
                 <div class="cart-item">
                    <div class="div-de-img">
@@ -97,7 +104,7 @@
                 </p>
             </div>
             <div>
-                <button type="button" class="cart-add-product">
+                <button type="button" class="cart-add-product" id="Ajouter">
                     +Ajouter un auntre produit
                 </button>
                 <button type="button" id="vers-paiement" class="cart-add-product">
@@ -105,7 +112,7 @@
                 </button>
             </div>
         </section>
-        <section class="paiement-section">
+        <section class="paiement-section hid">
             <div class="paiement-header">
                 <h2><strong>paiement par carte bancaire</strong></h2>
                 <p>veulliez inserer vos information bancaire afin de finallisez votre commande</p>
@@ -132,6 +139,9 @@
                 <button type="submit" class="paiement-button"> payer maintent</button>
             </form>
         </section>
+         <div class="affichepic">
+            <img src="assets/Café M.png" alt="Illustration vectorielle / Café M">
+        </div>
     </main>
 </body>
 

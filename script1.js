@@ -38,41 +38,44 @@ const plusbtn = document.querySelectorAll(".quantity-plus");
 
 for (const key1 of coffeeCart) {
   const x = coffeeCart.indexOf(key1);
-  console.log(key1);
-  
+  // console.log(key1);
+
   plusbtn[x].addEventListener("click", function () {
     key1.quantity = key1.quantity + 1;
     quantities[x].textContent = key1.quantity;
     coffemenu[x].querySelector(".cart-total").textContent = "total : " + (key1.price * key1.quantity).toFixed(2) + "DH";
-    console.log(coffeeCart);
+    // console.log(coffeeCart);
+    displaytotal();
   });
   minusbtn[x].addEventListener("click", function () {
     if (key1.quantity > 1) {
       key1.quantity = key1.quantity - 1;
       quantities[x].textContent = key1.quantity;
       coffemenu[x].querySelector(".cart-total").textContent = "total : " + (key1.price * key1.quantity).toFixed(2) + "DH";
+      displaytotal();
+      // console.log(coffeeCart);
     }
   });
 }
 
-function calculeHT(){
+function calculeHT() {
   let totalHT = 0;
-  for (const coffe of coffeeCart ){
+  for (const coffe of coffeeCart) {
     totalHT = totalHT + (coffe.price * coffe.quantity);
   }
   return totalHT;
 }
 
-function calculTVA(){
-    let totalTVA = calculeHT() * 0.055;
-    return totalTVA;
+function calculTVA() {
+  let totalTVA = calculeHT() * 0.055;
+  return totalTVA;
 }
-function calculeTTC(){
+function calculeTTC() {
   let totalTTC = calculeHT() + calculTVA();
   return totalTTC;
 }
 
-function displaytotal(){
+function displaytotal() {
   document.querySelector(".prix-HT").textContent = calculeHT().toFixed(2) + " DH";
   document.querySelector(".prix-TVA").textContent = calculTVA().toFixed(2) + " DH";
   document.querySelector(".prix-TTC").textContent = calculeTTC().toFixed(2) + " DH";
@@ -81,7 +84,47 @@ displaytotal();
 
 const showsection = document.querySelector(".paiement-section");
 const btnpaiement = document.querySelector("#vers-paiement");
+const hidesection = document.querySelector(".checkout-cart");
+const btnmodif = document.querySelector("#modifier");
 
-btnpaiement.addEventListener("click", function(){
-  showsection.style.display = "block";
+btnpaiement.addEventListener("click", function () {
+  showsection.classList.toggle('hid')
+  hidesection.classList.toggle('hid')
+  btnmodif.classList.toggle('hid')
 });
+btnmodif.addEventListener("click", function () {
+  hidesection.classList.toggle('hid');
+  showsection.classList.toggle('hid');
+  btnmodif.classList.toggle('hid');
+});
+const container = document.querySelector(".quick-menu")
+const searchinput = document.querySelector('#searchInpt')
+searchinput.addEventListener("input",function(){
+  // console.log(container);
+  // container.innerHTML = ""
+  
+  coffeeProducts.forEach(coffeprod => {
+    // console.log(searchinput.value);
+    // console.log(coffeprod.name);
+
+    
+    
+    if(coffeprod.name.toLocaleLowerCase().includes(searchinput.value.toLocaleLowerCase())){
+      container.innerHTML += `<span>${coffeprod.name}</span><br>`;
+    }
+    // console.log(container);
+    
+    if(searchinput.value.toLocaleLowerCase() === ""){
+      container.innerHTML = ""
+    }
+  });
+});
+const hidequick = document.querySelector("#terminer")
+const afficherQuick = document.querySelector("#Ajouter");
+const quickmenu = document.querySelector(".cart-header");
+// afficherQuick.addEventListener("click", function(){
+//   quickmenu.classList.toggle('hid');
+// })
+// hidequick.addEventListener("click", function(){
+//   quickmenu.classList.toggle('hid')
+// })

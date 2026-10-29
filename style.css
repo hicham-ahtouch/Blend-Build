@@ -240,9 +240,9 @@ body {
     align-items: center;
 }
 
-.cart-header {
+/* .cart-header {
     display: none;
-}
+} */
 
 .cart-item {
     display: flex;
@@ -390,9 +390,10 @@ body {
     color: #FFFFFF;
     font-size: 15px;
 }
-.paiement-section{
+.affichepic{
     display: none;
 }
+
 
 @media screen and (min-width: 1024px) {
 
@@ -401,6 +402,9 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 30px;
         padding: 20px;
+    }
+    .affichepic{
+        display: block;
     }
 
     .cafe-preview {
@@ -423,4 +427,7 @@ body {
         max-width: none;
     }
 
+}
+.hid{
+    display: none;
 }
