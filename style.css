@@ -431,3 +431,8 @@ body {
 .hid{
     display: none;
 }
+.quick-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

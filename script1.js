@@ -97,31 +97,63 @@ btnmodif.addEventListener("click", function () {
   showsection.classList.toggle('hid');
   btnmodif.classList.toggle('hid');
 });
+const structureHTML = `
+    <div class="cart-item">
+        <div class="div-de-img">
+            <img class="cart-product-image" src="" alt="">
+        </div>
+        <div class="cart-product-info">
+            <p class="cart-product-name"></p>
+            <p class="cart-unit-price"></p>
+            <div class="cart-quantity">
+                <button type="button" class="quantity-minus">-</button>
+                <span class="quantity-value"></span>
+                <button type="button" class="quantity-plus">+</button>
+            </div>
+            <p class="cart-total"></p>
+        </div>
+    </div>
+`;
+
 const container = document.querySelector(".quick-menu")
 const searchinput = document.querySelector('#searchInpt')
-searchinput.addEventListener("input",function(){
+searchinput.addEventListener("input", function () {
   // console.log(container);
-  // container.innerHTML = ""
-  
+  container.innerHTML = "";
   coffeeProducts.forEach(coffeprod => {
     // console.log(searchinput.value);
     // console.log(coffeprod.name);
-
-    
-    
-    if(coffeprod.name.toLocaleLowerCase().includes(searchinput.value.toLocaleLowerCase())){
-      container.innerHTML += `<span>${coffeprod.name}</span><br>`;
-    }
-    // console.log(container);
-    
-    if(searchinput.value.toLocaleLowerCase() === ""){
-      container.innerHTML = ""
+    if (coffeprod.name.toLocaleLowerCase().includes(searchinput.value.toLocaleLowerCase())) {
+      const butn = document.createElement("button");
+      butn.type = "button";
+      butn.textContent = coffeprod.name + coffeprod.price;
+      butn.addEventListener("click", function () {
+        let prodexiste = false;
+        for (const prod of coffeeCart) {
+          if (prod.id === coffeprod.id) {
+            prodexiste = true;
+          }
+        }
+        if (prodexiste === true) {
+          alert("this choice is already in your cart!");
+        }
+        else {
+          coffeeCart.push({
+            id: coffeprod.id,
+            name: coffeprod.name,
+            price: coffeprod.price,
+            quantity: 1,
+            image: coffeprod.image
+          });
+          displaytotal();
+        }
+      });
     }
   });
 });
-const hidequick = document.querySelector("#terminer")
-const afficherQuick = document.querySelector("#Ajouter");
-const quickmenu = document.querySelector(".cart-header");
+// const hidequick = document.querySelector("#terminer")
+// const afficherQuick = document.querySelector("#Ajouter");
+// const quickmenu = document.querySelector(".cart-header");
 // afficherQuick.addEventListener("click", function(){
 //   quickmenu.classList.toggle('hid');
 // })
