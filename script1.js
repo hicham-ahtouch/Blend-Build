@@ -148,6 +148,7 @@ searchinput.addEventListener("input", function () {
           displaytotal();
         }
       });
+      container.appendChild(butn);
     }
   });
 });
