@@ -32,7 +32,7 @@
         <section class="checkout-cart"> 
             <h2 class="cart-title"> Votre panier</h2>
             <div class="cart-table">
-                <div class="cart-header ">
+                <div class="cart-header hid">
                     <label >
                     <input type="search" name="search" id="searchInpt">
                     </label>
@@ -121,19 +121,19 @@
                 <div class="paiement-field-group">
                     <div class="paiement-field">
                         <label for="card-name">nom de titulaire de la carte</label>
-                        <input type="text" id="card-name" required>
+                        <input type="text" id="card-name" class="card-name" required>
                     </div>
                     <div class="paiement-field">
                         <label for="card-number">numero de la carte</label>
-                        <input type="text" id="card-number" required>
+                        <input type="text" id="card-number" class="card-number" required>
                     </div>
                     <div class="paiement-field">
                         <label for="card-expiry">date d'expiration</label>
-                        <input type="date" id="card-expiry" required>
+                        <input type="date" id="card-expiry" class="card-expiry" required>
                     </div>
                     <div class="paiement-field">
                         <label for="card-cvv">code de securite (CVV)</label>
-                        <input type="text" id="card-cvv" required>
+                        <input type="text" id="card-cvv" class="card-cvv" clrequired>
                     </div>
                 </div>
                 <button type="submit" class="paiement-button"> payer maintent</button>
