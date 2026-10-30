@@ -1,100 +1,121 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #FAF7F0;
 }
-.Bandeau-de-marque{
+
+.Bandeau-de-marque {
     background-color: #394B32;
     padding: 15px;
     font-size: 15px;
     text-align: center;
     color: white;
 }
+
 .nav-bar {
     display: flex;
     flex-direction: column;
     padding: 15px 20px;
 }
+
 .nav-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
+
 .logo-brume {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-.logo-brume img{
+
+.logo-brume img {
     width: 25px;
 }
+
 .logo-brume h1 {
     font-size: 24px;
     font-weight: normal;
 }
+
 .nav-link {
     display: none;
 }
-.nav-link a{
+
+.nav-link a {
     text-decoration: none;
 }
-.cart a{
+
+.cart a {
     display: flex;
     align-items: center;
     gap: 5px;
     text-decoration: none;
 }
-.cart img{
+
+.cart img {
     width: 18px;
 }
-.info-preview{
+
+.info-preview {
     text-align: center;
 }
-.info-preview h2{
+
+.info-preview h2 {
     font-size: 20px;
     font-weight: normal;
     line-height: 1.2;
     margin-bottom: 5px;
 }
+
 .info-preview p {
     font-size: 10px;
     margin-bottom: 0;
 }
-.cafe-preview{
+
+.cafe-preview {
     padding: 20px;
 }
-.header-preview{
+
+.header-preview {
     padding: 5px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-.header-preview p{
+
+.header-preview p {
     font-size: 14px;
 }
-.img-preview{
-    background-color:#E8DBC7 ;
+
+.img-preview {
+    background-color: #E8DBC7;
     text-align: center;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
 }
-.img-preview img{
+
+.img-preview img {
     width: 100%;
     max-width: 350px;
 }
-.etape{
+
+.etape {
     display: flex;
     justify-content: center;
     gap: 15px;
     padding: 15px 0;
     font-size: 12px;
 }
+
 .intro {
     padding: 20px;
     background-color: #FAF7F0;
@@ -116,11 +137,12 @@ body{
     margin-bottom: 8px;
 }
 
-.intro-descr{
+.intro-descr {
     font-size: 12px;
     color: #796A59;
 }
-.form-sec{
+
+.form-sec {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -133,7 +155,7 @@ body{
     margin-bottom: 5px;
 }
 
-.form-top > p {
+.form-top>p {
     width: 100%;
     font-size: 12px;
     color: #796A59;
@@ -146,7 +168,8 @@ body{
     justify-content: space-between;
     padding: 15px;
 }
-.form-options{
+
+.form-options {
     max-width: 110px;
     display: grid;
     padding: 20px;
@@ -173,6 +196,7 @@ body{
     border: 1px solid #394B32;
     background-color: #E9EDDF;
 }
+
 .cart-sum {
     display: flex;
     justify-content: space-between;
@@ -196,6 +220,181 @@ body{
     border-radius: 8px;
 }
 
+/*CSS-Page-Panier*/
+.checkout-cart {
+    width: 100%;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.cart-title {
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.cart-table {
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
+/* .cart-header {
+    display: none;
+} */
+
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border: 2px solid wheat;
+    border-radius: 10px;
+    background-color: #FAF7F0;
+    min-width: 200px;
+    width: 100%;
+}
+
+.cart-product-image {
+    width: 100px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.cart-product-info p {
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.cart-item p {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.cart-product-name {
+    border: 2px solid #DED5C7;
+    font-size: 15px;
+}
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.cart-quantity button {
+    padding: 5px 12px;
+    border: 2px solid #DED5C7;
+    background-color: #FAF7F0;
+    border-radius: 5px;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #FAF7F0;
+    border: 2px solid #DED5C7;
+    border-radius: 10px;
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 2px solid #DED5C7;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-bottom: 2px solid #DED5C7;
+}
+
+.cart-finale {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 2px solid #DED5C7;
+}
+
+.cart-add-product {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #394B32;
+    color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.paiement-section {
+    /* display: none; */
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+}
+
+.paiement-header {
+    margin-bottom: 25px;
+}
+
+.paiement-header h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.paiement-header p {
+    font-size: 13px;
+    color: rgb(129, 84, 84);
+}
+
+.paiement-form {
+    display: grid;
+    gap: 20px;
+}
+
+.paiement-field-group {
+    display: grid;
+    gap: 20px;
+}
+.paiement-field {
+    display: grid;
+    gap: 8px;
+}
+
+.paiement-field input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #DED5C7;
+    border-radius: 6px;
+    background-color: #FAF7F0;
+    font-size: 14px;
+}
+
+.paiement-button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    background-color: #394B32;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+.affichepic{
+    display: none;
+}
+
+
 @media screen and (min-width: 1024px) {
 
     main {
@@ -203,6 +402,9 @@ body{
         grid-template-columns: 1fr 1fr;
         gap: 30px;
         padding: 20px;
+    }
+    .affichepic{
+        display: block;
     }
 
     .cafe-preview {
@@ -216,12 +418,21 @@ body{
     }
 
     .form-top {
-       display: flex;
-       gap: 10px    ;
+        display: flex;
+        gap: 10px;
     }
 
     .form-options {
         flex: 1;
         max-width: none;
     }
+
+}
+.hid{
+    display: none;
+}
+.quick-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
