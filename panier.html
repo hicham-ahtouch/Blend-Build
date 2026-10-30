@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script1.js" defer></script>
+    <title>Panier</title>
+</head>
+
+<body>
+    <header>
+        <div class="Bandeau-de-marque">
+            <p>Du grain à votre tasse. Un café qui vous ressemble.</p>
+        </div>
+        <nav class="nav-bar">
+            <div class="nav-top">
+                <div class="logo-brume">
+                    <img src="assets/Brume.png" alt="café BRUME logo">
+                    <h1>BRUME</h1>
+                </div>
+                <div class="cart">
+                    <button type="button" id="modifier" class="cart-add-product hid">
+                    modifier
+                </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="checkout-cart"> 
+            <h2 class="cart-title"> Votre panier</h2>
+            <div class="cart-table">
+                <div class="cart-header hid">
+                    <label >
+                    <input type="search" name="search" id="searchInpt">
+                    </label>
+                    <div class="quick-menu">
+                        <span></span>
+                    </div>
+                    <button type="button" class="cart-add-product" id="terminer">
+                        terminer.
+                    </button>
+                </div>
+                <div class="cart-item">
+                   <div class="div-de-img">
+                        <img class="cart-product-image" src="" alt="cappucino">
+                    </div>
+                    <div class="cart-product-info">
+                        <p class="cart-product-name"></p>
+                        <p class="cart-unit-price"></p>
+                        <div class="cart-quantity">
+                            <button data-product-id="c2" type="button" class="quantity-minus"> - </button>
+                            <span class="quantity-value" id="c2"></span>
+                            <button  data-product-id="c2" type="button" class="quantity-plus"> + </button>
+                        </div>
+                        <p class="cart-total"></p>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <div class="div-de-img">
+                        <img class="cart-product-image" src="" alt="Latte Caramel">
+                    </div>
+                    <div class="cart-product-info">
+                        <p class="cart-product-name"></p>
+                        <p class="cart-unit-price"></p>
+                        <div class="cart-quantity">
+                            <button data-product-id="c3" type="button" class="quantity-minus"> - </button>
+                            <span class="quantity-value" id="c3" ></span>
+                            <button data-product-id="c3" type="button" class="quantity-plus"> + </button>
+                        </div>
+                        <p class="cart-total"></p>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <div class="div-de-img">
+                        <img class="cart-product-image" src="" alt="Mug">
+                    </div>
+                    <div class="cart-product-info">
+                        <p class="cart-product-name"> </p>
+                        <p class="cart-unit-price"></p>
+                        <div class="cart-quantity">
+                            <button data-product-id="c8" type="button" class="quantity-minus"> - </button>
+                            <span class="quantity-value" id="c8"></span>
+                            <button data-product-id="c8" type="button" class="quantity-plus"> + </button>
+                        </div>
+                        <p class="cart-total"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <p >
+                    <span>total HT</span>
+                    <span class="prix-HT" > </span>
+                </p>
+                <p>
+                    <span> T.V.A</span>
+                    <span class="prix-TVA"></span>
+                </p>
+                <p>
+                    <span>total TTC </span>
+                    <span class="prix-TTC"> </span>
+                </p>
+            </div>
+            <div>
+                <button type="button" class="cart-add-product" id="Ajouter">
+                    +Ajouter un auntre produit
+                </button>
+                <button type="button" id="vers-paiement" class="cart-add-product">
+                    vers-paiement
+                </button>
+            </div>
+        </section>
+        <section class="paiement-section hid">
+            <div class="paiement-header">
+                <h2><strong>paiement par carte bancaire</strong></h2>
+                <p>veulliez inserer vos information bancaire afin de finallisez votre commande</p>
+            </div>
+            <form class="paiement-form">
+                <div class="paiement-field-group">
+                    <div class="paiement-field">
+                        <label for="card-name">nom de titulaire de la carte</label>
+                        <input type="text" id="card-name" class="card-name" required>
+                    </div>
+                    <div class="paiement-field">
+                        <label for="card-number">numero de la carte</label>
+                        <input type="text" id="card-number" class="card-number" required>
+                    </div>
+                    <div class="paiement-field">
+                        <label for="card-expiry">date d'expiration</label>
+                        <input type="date" id="card-expiry" class="card-expiry" required>
+                    </div>
+                    <div class="paiement-field">
+                        <label for="card-cvv">code de securite (CVV)</label>
+                        <input type="text" id="card-cvv" class="card-cvv" clrequired>
+                    </div>
+                </div>
+                <button type="submit" class="paiement-button"> payer maintent</button>
+            </form>
+        </section>
+         <div class="affichepic">
+            <img src="assets/Café M.png" alt="Illustration vectorielle / Café M">
+        </div>
+    </main>
+</body>
+
+</html>
