@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="admin.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="productForm">
+
+        <div id="step1">
+            <h2> Informations Générales </h2>
+            <label for="product-name"> product Name</label>
+            <input type="text" id="product-name" name="product-name">
+
+            <label for="baseprice"> Base price</label>
+            <input type="number" id="baseprice" name="baseprice" min="0" step="0.01">
+
+            <label for="description"> description </label>
+            <textarea name="description" id="description"></textarea>
+
+            <label for="productimage">product image</label>
+            <input for="url" id="productimage" name="productimage">
+            <div>
+                <label for="promotion">product promotion </label>
+                <input type="checkbox" id="promotion" name="promotion">
+            </div>
+            <div class="hidden">
+                <label for="discount"> discount pourcentage</label>
+                <input type="number" id="discount" name="discount">
+
+                <label for="enddate">Date de fin</label>
+                <input type="date" id="enddate" name="enddate">
+            </div>
+            <button type="button" id="next1"> NEXT </button>
+        </div>
+
+        <div id="step2" class="hidden">
+            <h2> Caractéristiques & Options </h2>
+            <label for="origin"> Origine des grains </label>
+            <select name="origin" id="origin">
+                <option value="">choose an origin</option>
+                <option value="colombia">colombie</option>
+                <option value="ethiopia"> ethiopie</option>
+                <option value="brazil">Bresil</option>
+                <option value="mix">melange maison</option>
+            </select>
+            <label for="intensity">Niveau de torréfaction / Intensité</label>
+            <input type="range" id="intensity" name="intensity" min="1" max="10">
+
+            <h3>Température</h3>
+
+            <input type="radio" id="hot" name="Temperature" value="chaud">
+            <label for="hot"> chaud </label>
+
+            <input type="radio" name="Temperature" id="iced" value="glacé">
+            <label for="iced"> glacé </label>
+
+            <h3> Tailles disponibles </h3>
+
+            <input type="checkbox" id="small" name="sizes" value="small">
+            <label for="small">Small</label>
+            <input type="checkbox" id="meduim" name="sizes" value="medium">
+            <label for="medium">Medium</label>
+            <input type="checkbox" id="large" name="sizes" value="large">
+            <label for="large">Large</label>
+
+            <h3> Options de lait </h3>
+            <input type="checkbox" name="milk" id="cowmilk" value="vache">
+            <label for="cowmilk"> Vache </label>
+
+            <input type="checkbox" name="milk" id="oatmilk" value="avoine">
+            <label for="oatmilk"> Avoine </label>
+
+            <input type="checkbox" name="milk" id="soymilk" value="soja">
+            <label for="soymilk"> Soja </label>
+
+            <input type="checkbox" name="milk" id="almondmilk" value="amande">
+            <label for="almondmilk"> Amande </label>
+
+            <h3>Suppléments</h3>
+            <input type="checkbox" name="supplements" id="vanilla" value="Vanille">
+            <label for="vanilla"> Vanille </label>
+
+            <input type="checkbox" name="supplements" id="caramel" value="Caramel">
+            <label for="caramel"> Caramel </label>
+
+            <input type="checkbox" name="supplements" id="noisette" value="Noisette">
+            <label for="noisette"> Noisette </label>
+
+            <button type="button" id="previous1"> Previous </button>
+            <button type="button" id="next2"> NEXT </button>
+        </div>
+
+        <div id="step3" class="hidden">
+
+        </div>
+    </form>
+</body>
+
+</html>

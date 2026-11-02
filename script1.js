@@ -193,7 +193,7 @@ let input_empty = /^\s*$/
 let the_fullname_input = document.querySelector('.card-name')
 the_fullname_input.addEventListener('focusout', ()=>{
   let input_value = the_fullname_input.value
-  let name_regex = /^([a-z\d]{3 ,24})$/i ;
+  let name_regex = /^([a-z]+\s[a-z]+)$/i; ;
   if (!name_regex.test(input_value) && !input_empty.test(input_value)) {
     alert("veuillez entre une nom valid!!!")
     the_fullname_input.value = null
