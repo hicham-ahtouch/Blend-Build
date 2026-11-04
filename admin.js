@@ -1,3 +1,13 @@
+let product = {
+    name: "",
+    price: "",
+    description: "",
+    image: "",
+    promotion: false,
+    discount: "",
+    enddate: ""
+};
+
 let prod_name = document.querySelector('#product-name')
 let prix_base = document.querySelector("#baseprice")
 let descrip = document.querySelector("#description")
@@ -138,14 +148,7 @@ function togglePromotionFields() {
 
 function validatestep1() {
     if (validateProductName() === false) {
-        swal({
-            toast: true,
-            position: "top end",
-            icon: "error",
-            title: "Enter a valid name!",
-            showConfirmButton: false,
-            timer: 2000
-        });
+        
         return false;
     }
     if (validateBasePrice() === false) {
@@ -170,6 +173,8 @@ function validatestep1() {
 
 function NextValidation(){
     if(validatestep1() === true){
+        collectStep1Data();
+        console.log(product);
         FirstPage.classList.add('hidden');
         SecPage.classList.remove('hidden');
     }
@@ -185,10 +190,30 @@ function NextValidation(){
     }
 }
 
+function collectStep1Data(){
+    product.name = prod_name.value;
+    product.price = prix_base.value;
+    product.description = descrip.value
+    product.image = prod_img.value;
+    product.promotion = promo.checked;
+    if(promo.checked === true) {
+        product.discount = discount.value;
+        product.enddate = enddate.value;
+    } 
+    else {
+        product.discount = "";
+        product.enddate = "";
+    }
+}
+
+
 // step2 
 let Origin = document.querySelector("#origin");
-let intensity = document.querySelector('#intensity')
+// let intensity = document.querySelector('#intensity')
 let intensity_value_display = document.querySelector('#intensityValue');
+let hot = document.querySelector("#hot");
+let iced = document.querySelector("#iced");
+
 
 Origin.addEventListener('change', validateorigin)
 intensity.addEventListener('input', updateIntensityValue);
@@ -213,4 +238,19 @@ function validateorigin(){
 
 function updateIntensityValue(){
     intensity_value_display.textContent = intensity.value;
+}
+
+function validateTempo(){
+    if(hot.checked === false && iced.checked === false){
+        swal({
+            toast: true,
+            position: "top-end",
+            icon: "error",
+            title: "Please select one of the temperature!",
+            showConfirmButton: false,
+            timer: 2000
+        });
+        return false;
+    }
+    return true;
 }
