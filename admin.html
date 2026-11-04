@@ -31,14 +31,14 @@
                 <label for="promotion">product promotion </label>
                 <input type="checkbox" id="promotion" name="promotion">
             </div>
-            <div class="hidden">
+            <div id="promotionFields" class="hidden">
                 <label for="discount"> discount pourcentage</label>
                 <input type="number" id="discount" name="discount">
 
                 <label for="enddate">Date de fin</label>
                 <input type="date" id="enddate" name="enddate">
             </div>
-            <button type="button" id="next1"> NEXT </button>
+            <button type="button" id="next1" > NEXT </button>
         </div>
 
         <div id="step2" class="hidden">
@@ -51,8 +51,10 @@
                 <option value="brazil">Bresil</option>
                 <option value="mix">melange maison</option>
             </select>
+
             <label for="intensity">Niveau de torréfaction / Intensité</label>
             <input type="range" id="intensity" name="intensity" min="1" max="10">
+            <span id="intensityValue">1</span>
 
             <h3>Température</h3>
 
