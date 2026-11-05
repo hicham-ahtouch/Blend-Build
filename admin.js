@@ -5,7 +5,9 @@ let product = {
     image: "",
     promotion: false,
     discount: "",
-    enddate: ""
+    enddate: "",
+    temperature: "",
+    tailles: "",
 };
 
 let prod_name = document.querySelector('#product-name')
@@ -208,11 +210,15 @@ function collectStep1Data(){
 
 
 // step2 
+
 let Origin = document.querySelector("#origin");
 // let intensity = document.querySelector('#intensity')
 let intensity_value_display = document.querySelector('#intensityValue');
 let hot = document.querySelector("#hot");
 let iced = document.querySelector("#iced");
+let small = document.querySelector('#small')
+let medium = document.querySelector('#medium')
+let large = document.querySelector('#large')
 
 
 Origin.addEventListener('change', validateorigin)
@@ -253,4 +259,27 @@ function validateTempo(){
         return false;
     }
     return true;
+}
+
+function validateTailles(){
+    if(small.checked === true && medium.checked === false && large.checked === false ){
+        return true;
+    }
+    else if (small.checked === false && medium.checked === true && large.checked === false){
+        return true;
+    }
+    else if (small.checked === false && medium.checked === false && large.checked === true){
+        return true;
+    }
+    else{
+        swal({
+            toast: true,
+            position: "top end",
+            icon: "error",
+            title: "Please select one taille!",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+    return false;
 }
