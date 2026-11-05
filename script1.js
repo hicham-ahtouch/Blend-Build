@@ -122,6 +122,7 @@ const structureHTML = `
 const container = document.querySelector(".quick-menu")
 const searchinput = document.querySelector('#searchInpt')
 const cartTable = document.querySelector(".cart-table")
+
 searchinput.addEventListener("input", function () {
   // console.log(container);
   container.innerHTML = ""
@@ -145,7 +146,7 @@ searchinput.addEventListener("input", function () {
           alert("this choice is already in your cart!");
         }
         else {
-          coffeeCart.push ({
+          coffeeCart.push({
             id: coffeprod.id,
             name: coffeprod.name,
             price: coffeprod.price,
@@ -158,7 +159,7 @@ searchinput.addEventListener("input", function () {
           temp.innerHTML = structureHTML;
           const newProduct = temp.querySelector(".cart-item");
           newProduct.querySelector(".cart-total").textContent = "total : " + (newCartProduct.price * newCartProduct.quantity).toFixed(2) + " DH";
-          newProduct.querySelector(".cart-product-name").textContent = newCartProduct.name; 
+          newProduct.querySelector(".cart-product-name").textContent = newCartProduct.name;
           newProduct.querySelector(".cart-unit-price").textContent = "prix unitaire : " + newCartProduct.price.toFixed(2) + " DH";
           newProduct.querySelector(".cart-product-image").src = "/assets/" + newCartProduct.image;
           newProduct.querySelector(".cart-product-image").alt = newCartProduct.name
@@ -191,9 +192,9 @@ hidequick.addEventListener("click", function () {
 let input_empty = /^\s*$/
 
 let the_fullname_input = document.querySelector('.card-name')
-the_fullname_input.addEventListener('focusout', ()=>{
+the_fullname_input.addEventListener('focusout', () => {
   let input_value = the_fullname_input.value
-  let name_regex = /^([a-z\d]{3 ,24})$/i ;
+  let name_regex = /^([a-z]+\s[a-z]+)$/i;;
   if (!name_regex.test(input_value) && !input_empty.test(input_value)) {
     alert("veuillez entre une nom valid!!!")
     the_fullname_input.value = null
@@ -201,10 +202,10 @@ the_fullname_input.addEventListener('focusout', ()=>{
 })
 
 let the_carte_Num = document.querySelector('.card-number')
-the_carte_Num.addEventListener('focusout', () =>{
+the_carte_Num.addEventListener('focusout', () => {
   let input_value = the_carte_Num.value
   let mastercard_cart_regex = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
-  let visa_cart_regex = /^4[0-9]{12}(?:[0-9]{3})?$/ ;
+  let visa_cart_regex = /^4[0-9]{12}(?:[0-9]{3})?$/;
   if (!mastercard_cart_regex.test(input_value) && !visa_cart_regex.test(input_value) && !nothing.test(input_value)) {
     alert("entrer-vous une Carte de credit nombre valid!!!")
     the_carte_Num.value = null
