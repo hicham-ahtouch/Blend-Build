@@ -8,6 +8,10 @@ let product = {
     enddate: "",
     temperature: "",
     tailles: "",
+    Origin: "",
+    intensity: "",
+    milk:"",
+    supplements:[]
 };
 
 let prod_name = document.querySelector('#product-name')
@@ -21,6 +25,7 @@ let promo_fields = document.querySelector("#promotionFields")
 let nextBtn1 = document.querySelector('#next1')
 let FirstPage = document.querySelector('#step1')
 let SecPage = document.querySelector('#step2')
+let ThirdPage = document.querySelector("#step3");
 
 enddate.addEventListener('focusout', validateEnddate);
 discount.addEventListener('focusout', validateDiscount);
@@ -211,7 +216,7 @@ function collectStep1Data(){
 
 // step2 
 
-let Origin = document.querySelector("#origin");
+let Origin = document.querySelector("#Origin");
 // let intensity = document.querySelector('#intensity')
 let intensity_value_display = document.querySelector('#intensityValue');
 let hot = document.querySelector("#hot");
@@ -219,10 +224,22 @@ let iced = document.querySelector("#iced");
 let small = document.querySelector('#small')
 let medium = document.querySelector('#medium')
 let large = document.querySelector('#large')
+let cowmilk = document.querySelector('#cowmilk')
+let oatmilk = document.querySelector('#oatmilk')
+let soymilk = document.querySelector('#soymilk')
+let almondmilk = document.querySelector('#almondmilk')
+let vanilla = document.querySelector("#vanilla")
+let caramel = document.querySelector("#caramel");
+let noisette = document.querySelector("#noisette")
+let nextBtn2 = document.querySelector("#next2");
+let previousBtn1 = document.querySelector("#previous1");
 
 
 Origin.addEventListener('change', validateorigin)
 intensity.addEventListener('input', updateIntensityValue);
+nextBtn2.addEventListener("click", NextValidation2);
+previousBtn1.addEventListener("click", PreviousStep1);
+
 
 
 
@@ -274,7 +291,7 @@ function validateTailles(){
     else{
         swal({
             toast: true,
-            position: "top end",
+            position: "top-end",
             icon: "error",
             title: "Please select one taille!",
             showConfirmButton: false,
@@ -282,4 +299,117 @@ function validateTailles(){
         });
     }
     return false;
+}
+
+function validateMilk() {
+    let selectedMilk = [];
+    
+    if (cowmilk.checked === true) {
+        selectedMilk.push(cowmilk.value);
+    }
+    
+    if (oatmilk.checked === true) {
+        selectedMilk.push(oatmilk.value);
+    }
+    
+    if (soymilk.checked === true) {
+        selectedMilk.push(soymilk.value);
+    }
+    
+    if (almondmilk.checked === true) {
+        selectedMilk.push(almondmilk.value);
+    }
+    
+    if (selectedMilk.length !== 1) {
+        swal({
+            toast: true,
+            position: "top-end",
+            icon: "error",
+            title: "Please select only one milk option!",
+            showConfirmButton: false,
+            timer: 2000
+        });
+        return false;
+    }
+    // console.log(selectedMilk)
+    product.milk = selectedMilk[0];
+    return true;
+}
+function collectSupplementsData() {
+    product.supplements = [];
+    
+    if (vanilla.checked === true) {
+        product.supplements.push(vanilla.value);
+    }
+    
+    if (caramel.checked === true) {
+        product.supplements.push(caramel.value);
+    }
+    if (noisette.checked === true) {
+        product.supplements.push(noisette.value);
+    }
+}
+
+function validatestep2() {
+    if (validateOrigin() === false) {
+        return false;
+    }
+
+    if (validateTemperature() === false) {
+        return false;
+    }
+
+    if (validateTailles() === false) {
+        return false;
+    }
+
+    if (validateMilk() === false) {
+        return false;
+    }
+
+    return true;
+}
+function collectStep2Data(){
+    product.Origin = Origin.value;
+    product.intensity = intensity.value;
+
+     if (hot.checked === true){
+        product.temperature = hot.value;
+     }
+     else if (iced.checked === true){
+        product.temperature = iced.value;
+     }
+     if(small.checked === true){
+        product.tailles = small.value;
+    }
+
+    else if(medium.checked === true ){
+        product.tailles = medium.value;
+    }
+    else if(large.checked === true){
+        product.tailles = large.value;
+    }
+    collectSupplementsData();
+}
+function NextValidation2() {
+    if (validatestep2() === true) {
+        collectStep2Data();
+
+        SecPage.classList.add("hidden");
+        ThirdPage.classList.remove("hidden");
+    }
+    else {
+        swal({
+            toast: true,
+            position: "top-end",
+            icon: "error",
+            title: "Please check your inputs again!",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+}
+function PreviousStep1() {
+    SecPage.classList.add("hidden");
+    FirstPage.classList.remove("hidden");
 }
