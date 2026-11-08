@@ -10,8 +10,8 @@ let product = {
     tailles: "",
     Origin: "",
     intensity: "",
-    milk:"",
-    supplements:[]
+    milk: "",
+    supplements: []
 };
 
 let prod_name = document.querySelector('#product-name')
@@ -123,7 +123,7 @@ function validateDiscount() {
 function validateEnddate() {
     let enddate_value = enddate.value;
     let current_date = new Date();
-    current_date.setHours(0,0,0,0);
+    current_date.setHours(0, 0, 0, 0);
     let selected_date = new Date(enddate.value);
     // console.log(new Date(enddate.value));
     if (enddate_value === "" || selected_date < current_date) {
@@ -155,7 +155,7 @@ function togglePromotionFields() {
 
 function validatestep1() {
     if (validateProductName() === false) {
-        
+
         return false;
     }
     if (validateBasePrice() === false) {
@@ -178,14 +178,14 @@ function validatestep1() {
     return true;
 }
 
-function NextValidation(){
-    if(validatestep1() === true){
+function NextValidation() {
+    if (validatestep1() === true) {
         collectStep1Data();
         console.log(product);
         FirstPage.classList.add('hidden');
         SecPage.classList.remove('hidden');
     }
-    else{
+    else {
         swal({
             toast: true,
             position: "top-end",
@@ -197,16 +197,16 @@ function NextValidation(){
     }
 }
 
-function collectStep1Data(){
+function collectStep1Data() {
     product.name = prod_name.value;
     product.price = prix_base.value;
     product.description = descrip.value
     product.image = prod_img.value;
     product.promotion = promo.checked;
-    if(promo.checked === true) {
+    if (promo.checked === true) {
         product.discount = discount.value;
         product.enddate = enddate.value;
-    } 
+    }
     else {
         product.discount = "";
         product.enddate = "";
@@ -217,7 +217,7 @@ function collectStep1Data(){
 // step2 
 
 let Origin = document.querySelector("#Origin");
-// let intensity = document.querySelector('#intensity')
+let intensity = document.querySelector('#intensity')
 let intensity_value_display = document.querySelector('#intensityValue');
 let hot = document.querySelector("#hot");
 let iced = document.querySelector("#iced");
@@ -243,9 +243,9 @@ previousBtn1.addEventListener("click", PreviousStep1);
 
 
 
-function validateorigin(){
-    let origin_input = Origin.value ;
-    if(origin_input === ""){
+function validateorigin() {
+    let origin_input = Origin.value;
+    if (origin_input === "") {
         swal({
             toast: true,
             position: "top-end",
@@ -259,12 +259,12 @@ function validateorigin(){
     return true;
 }
 
-function updateIntensityValue(){
+function updateIntensityValue() {
     intensity_value_display.textContent = intensity.value;
 }
 
-function validateTempo(){
-    if(hot.checked === false && iced.checked === false){
+function validateTemperature() {
+    if (hot.checked === false && iced.checked === false) {
         swal({
             toast: true,
             position: "top-end",
@@ -278,17 +278,17 @@ function validateTempo(){
     return true;
 }
 
-function validateTailles(){
-    if(small.checked === true && medium.checked === false && large.checked === false ){
+function validateTailles() {
+    if (small.checked === true && medium.checked === false && large.checked === false) {
         return true;
     }
-    else if (small.checked === false && medium.checked === true && large.checked === false){
+    else if (small.checked === false && medium.checked === true && large.checked === false) {
         return true;
     }
-    else if (small.checked === false && medium.checked === false && large.checked === true){
+    else if (small.checked === false && medium.checked === false && large.checked === true) {
         return true;
     }
-    else{
+    else {
         swal({
             toast: true,
             position: "top-end",
@@ -303,23 +303,23 @@ function validateTailles(){
 
 function validateMilk() {
     let selectedMilk = [];
-    
+
     if (cowmilk.checked === true) {
         selectedMilk.push(cowmilk.value);
     }
-    
+
     if (oatmilk.checked === true) {
         selectedMilk.push(oatmilk.value);
     }
-    
+
     if (soymilk.checked === true) {
         selectedMilk.push(soymilk.value);
     }
-    
+
     if (almondmilk.checked === true) {
         selectedMilk.push(almondmilk.value);
     }
-    
+
     if (selectedMilk.length !== 1) {
         swal({
             toast: true,
@@ -332,16 +332,15 @@ function validateMilk() {
         return false;
     }
     // console.log(selectedMilk)
-    product.milk = selectedMilk[0];
     return true;
 }
 function collectSupplementsData() {
     product.supplements = [];
-    
+
     if (vanilla.checked === true) {
         product.supplements.push(vanilla.value);
     }
-    
+
     if (caramel.checked === true) {
         product.supplements.push(caramel.value);
     }
@@ -351,7 +350,7 @@ function collectSupplementsData() {
 }
 
 function validatestep2() {
-    if (validateOrigin() === false) {
+    if (validateorigin() === false) {
         return false;
     }
 
@@ -369,31 +368,46 @@ function validatestep2() {
 
     return true;
 }
-function collectStep2Data(){
+function collectStep2Data() {
     product.Origin = Origin.value;
     product.intensity = intensity.value;
 
-     if (hot.checked === true){
+    if (hot.checked === true) {
         product.temperature = hot.value;
-     }
-     else if (iced.checked === true){
+    }
+    else if (iced.checked === true) {
         product.temperature = iced.value;
-     }
-     if(small.checked === true){
+    }
+    if (small.checked === true) {
         product.tailles = small.value;
     }
 
-    else if(medium.checked === true ){
+    else if (medium.checked === true) {
         product.tailles = medium.value;
     }
-    else if(large.checked === true){
+    else if (large.checked === true) {
         product.tailles = large.value;
     }
+
+    if (cowmilk.checked === true) {
+        product.milk = cowmilk.value;
+    }
+    else if (oatmilk.checked === true) {
+        product.milk = oatmilk.value;
+    }
+    else if (soymilk.checked === true) {
+        product.milk = soymilk.value;
+    }
+    else if (almondmilk.checked === true) {
+        product.milk = almondmilk.value;
+    }
+
     collectSupplementsData();
 }
 function NextValidation2() {
     if (validatestep2() === true) {
         collectStep2Data();
+        displayProductPreview();
 
         SecPage.classList.add("hidden");
         ThirdPage.classList.remove("hidden");
@@ -412,4 +426,111 @@ function NextValidation2() {
 function PreviousStep1() {
     SecPage.classList.add("hidden");
     FirstPage.classList.remove("hidden");
+}
+
+//step3
+
+function displayProductPreview() {
+    ThirdPage.innerHTML = "";
+
+    let previewTitle = document.createElement("h2");
+    previewTitle.textContent = "Product Preview";
+    ThirdPage.appendChild(previewTitle)
+
+    let previousBtn2 = document.createElement("button");
+    previousBtn2.type = "button";
+    previousBtn2.textContent = "Previous";
+    ThirdPage.appendChild(previousBtn2);
+
+
+    previousBtn2.addEventListener("click", function () {
+        ThirdPage.classList.add("hidden")
+        SecPage.classList.remove("hidden")
+    });
+
+
+    let submitBtn = document.createElement("button");
+    submitBtn.type = "button";
+    submitBtn.textContent = "SUBMIT";
+    ThirdPage.appendChild(submitBtn);
+
+    submitBtn.addEventListener("click", function () {
+        swal({
+            toast: true,
+            position: "top-end",
+            icon: "success",
+            title: "Product created successfully!",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    });
+
+
+    let productPreview = document.createElement("div")
+    ThirdPage.appendChild(productPreview)
+
+
+    let productImage = document.createElement("img")
+    productPreview.appendChild(productImage);
+
+    let productName = document.createElement("h2")
+    productPreview.appendChild(productName);
+
+    let productDescription = document.createElement("p")
+    productPreview.appendChild(productDescription)
+
+    let productPrice = document.createElement("p")
+    productPreview.appendChild(productPrice)
+
+
+    productImage.src = product.image;
+    productName.textContent = product.name;
+    productDescription.textContent = product.description;
+    productPrice.textContent = product.price;
+
+
+    let productSpecifications = document.createElement("div")
+
+    let productPromotion = document.createElement("p");
+    if (product.promotion === true) {
+        productPromotion.textContent = product.discount + "%";
+        productPreview.appendChild(productPromotion);
+    }
+
+
+    let specificationsTitle = document.createElement("h3")
+    specificationsTitle.textContent = "Product specifications"
+    productSpecifications.appendChild(specificationsTitle);
+
+
+    let productOrigin = document.createElement("p");
+    productOrigin.textContent = "Origin: " + product.Origin;
+
+    let productIntensity = document.createElement("p");
+    productIntensity.textContent = "Intensity: " + product.intensity;
+
+    let productTemperature = document.createElement("p");
+    productTemperature.textContent = "Temperature: " + product.temperature;
+
+    let productSize = document.createElement("p");
+    productSize.textContent = "Size: " + product.tailles;
+
+    let productMilk = document.createElement("p");
+    productMilk.textContent = "Milk: " + product.milk;
+
+    let productSupplements = document.createElement("p")
+    productSupplements.textContent = "Supplements:";
+    for (let i = 0; i < product.supplements.length; i++) {
+
+        productSupplements.textContent += product.supplements[i] + " ";
+    }
+
+
+    productSpecifications.appendChild(productOrigin)
+    productSpecifications.appendChild(productIntensity)
+    productSpecifications.appendChild(productTemperature)
+    productSpecifications.appendChild(productSize)
+    productSpecifications.appendChild(productMilk);
+    productSpecifications.appendChild(productSupplements)
+    productPreview.appendChild(productSpecifications)
 }
